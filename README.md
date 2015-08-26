@@ -8,17 +8,18 @@
 ## Naming of variables, functions, ...
 
 ### 1
-  ####What
+  ###What
   Name variables, functions etc. as specific as possible.
-  ####Why
+  ###Why
   This improves the readability of your code for you and other people.
 
-  ####Bad
+  ###Bad
   ```javascript
   function find(id) {
   }
-
-  ####Good
+  ...
+  
+  ###Good
   ```javascript
   function findCustomer(customerId) {
   }

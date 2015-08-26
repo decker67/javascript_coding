@@ -17,13 +17,13 @@
   ```javascript
   function find(id) {
   }
-  ...
+  ```
   
   #### Good
   ```javascript
   function findCustomer(customerId) {
   }
-  ...
+  ```
 
 ### 2 Conditions for if, while, ...
   #### What
@@ -35,11 +35,13 @@
   #### Bad
   ```javascript
   if (index > 0 && index < maxLen && person.age > 18) {
-  ...
+  ```
   
   #### Good
   ```javascript
   var isPersonAdult = person.age > 18;
   var isIndexValid = index > 0 && index < maxLen;
   if (isIndexValid && isPersonAdult) {
-  ...
+  ```
+
+

@@ -7,6 +7,7 @@
   2. Conditions for if, while, ...
   3. Check parameters
   4. Comment where a comment is needed
+  5. Provide variables with default values
 
 ### 1 Naming of variables, functions, ...
 #### What
@@ -67,7 +68,7 @@ Ignoring or simply returning hides errors.
     console.assert(customer instance of Customer, 'no costumer object given');
   ```
 
-### 3 Comment where a comment is needed
+### 4 Comment where a comment is needed
 #### What
 Don't bore with comments that are obious, instead comment the not so obvious things.
 
@@ -91,3 +92,31 @@ Boring demotivates and secrets decreses consciousness power. Always ask yourself
   scope.tabIndex = (disabled) ? "-1" : "0";
   
   ```
+  
+  
+### 5 Provide variables with default values.
+#### What
+Sometimes I find code that has to check if a variable is defined and if not it is initialised with i.e. an empty array.
+
+#### Why
+You have to write additonal code to check the variable each time you want to use it.
+
+#### Bad
+  ```javascript
+  var selectedCustomerIds;
+  ...
+  if (!selectedCustomerIds) {
+    selectedCustomerIds = [];
+  }
+  selectedCustomerIds.forEach(...); 
+  ```
+  
+#### Good
+  ```javascript
+  var selectedCustomerIds = [];
+  ...
+  selectedCustomerIds.forEach(...); 
+  ```
+
+
+

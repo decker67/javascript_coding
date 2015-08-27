@@ -6,6 +6,7 @@
   1. Naming of variables, functions, ...
   2. Conditions for if, while, ...
   3. Check parameters
+  4. Comment where a comment is needed
 
 ### 1 Naming of variables, functions, ...
 #### What
@@ -44,7 +45,7 @@ This improves the readability of your code for you and other people.
   var isIndexValid = index > 0 && index < maxLen;
   if (isIndexValid && isPersonAdult) {
   ```
-### Check parameters
+### 3 Check parameters
 #### What
 Because JavaScript allows you to call a function with any parameter, it seems to be a good practice to check these.
   
@@ -66,3 +67,27 @@ Ignoring or simply returning hides errors.
     console.assert(customer instance of Customer, 'no costumer object given');
   ```
 
+### 3 Comment where a comment is needed
+#### What
+Don't bore with comments that are obious, instead comment the not so obvious things.
+
+#### Why
+Boring demotivates and secrets decreses consciousness power. Always ask yourself: Is this really obvious or could it be misunderstood?
+
+#### Bad
+  ```javascript
+  //sets customerId to '4'
+  var id = '4';
+  ...
+  scope.tabIndex = (value) ? "-1" : "0";
+  
+  ```
+  
+#### Good
+  ```javascript
+  var customerId = '4';
+  ...
+  //
+  scope.tabIndex = (value) ? "-1" : "0";
+  
+  ```

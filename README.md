@@ -7,37 +7,37 @@
   2. Conditions for if, while, ...
 
 ### 1 Naming of variables, functions, ...
-### What
+#### What
 Name variables, functions etc. as specific as possible.
   
-### Why
+#### Why
 This improves the readability of your code for you and other people.
 
-### Bad
+#### Bad
   ```javascript
   function find(id) {
   }
   ```
   
-### Good
+#### Good
   ```javascript
   function findCustomer(customerId) {
   }
   ```
 
-### 2 Conditions for if, while, ...
-### What
+#### 2 Conditions for if, while, ...
+#### What
 Create boolean variables to name conditions in if, while, ....
   
-### Why
+#### Why
 This improves the readability of your code for you and other people.
 
-### Bad
+#### Bad
   ```javascript
   if (index > 0 && index < maxLen && person.age > 18) {
   ```
   
-### Good
+#### Good
   ```javascript
   var isPersonAdult = person.age > 18;
   var isIndexValid = index > 0 && index < maxLen;

@@ -88,6 +88,6 @@ Boring demotivates and secrets decreses consciousness power. Always ask yourself
   var customerId = '4';
   ...
   //ignore control during tabbing if disabled (-1), or handle tabbing in source order (0) otherwise
-  scope.tabIndex = (value) ? "-1" : "0";
+  scope.tabIndex = (disabled) ? "-1" : "0";
   
   ```

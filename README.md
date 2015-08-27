@@ -87,7 +87,9 @@ Boring demotivates and secrets decreses consciousness power. Always ask yourself
   ```javascript
   var customerId = '4';
   ...
-  //
-  scope.tabIndex = (value) ? "-1" : "0";
+  //set a tabindex dependent from the value 
+  //0 is handled in source order (the order it appears in the DOM)
+  //-1 is ignored during tabbing but is focusable.
+  tabIndex = (value) ? "-1" : "0";
   
   ```

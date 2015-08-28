@@ -8,7 +8,8 @@
   3. Check parameters
   4. Comment where a comment is needed
   5. Provide variables with default values
-
+  6. Replace switch case by a table
+  
 ### 1 Naming of variables, functions, ...
 #### What
 Name variables, functions etc. as specific as possible.
@@ -93,7 +94,6 @@ Boring demotivates and secrets decreses consciousness power. Always ask yourself
   
   ```
   
-  
 ### 5 Provide variables with default values.
 #### What
 Sometimes I find code that has to check if a variable is defined and if not it is initialised with i.e. an empty array.
@@ -116,6 +116,43 @@ You have to write additonal code to check the variable each time you want to use
   var selectedCustomerIds = [];
   ...
   selectedCustomerIds.forEach(...); 
+  ```
+
+### 6 Replace switch case by a table
+#### What
+If you are simply replacing one constant value through another constant value, it is easier to use a object for that.
+
+#### Why
+Makes your code simpler and faster.
+
+#### Bad
+  ```javascript
+  var lockFlagText;
+
+  switch (lockFlag) {
+      case 'l':
+          lockFlagText = 'Lost';
+          break;
+
+      case 'd':
+          lockFlagText = 'Defect';
+          break;
+
+      case 'f':
+          lockFlagText = 'Fired';
+          break;
+
+      case ' ':
+          lockFlagText = 'Not locked';
+          break;
+  }
+  ```
+  
+#### Good
+  ```javascript
+  var LOCK_FLAG_TEXTS = {'l': 'Lost', 'd': 'Defect', f: 'Fired', ' ': 'Not locked'};
+  ...
+  var lockFlagText = LOCK_FLAG_TEXTS[lockFlag];
   ```
 
 

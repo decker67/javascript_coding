@@ -9,6 +9,7 @@
   4. Comment where a comment is needed
   5. Provide variables with default values
   6. Replace switch case by a table
+  7. Avoid anonymous functions
   
 ### 1 Naming of variables, functions, ...
 #### What
@@ -155,5 +156,21 @@ Makes your code simpler and faster.
   var lockFlagText = LOCK_FLAG_TEXTS[lockFlag];
   ```
 
+### 7 Avoid anonymous functions
+#### What
+It is a common practice to use anonymous function declarations for defining a callback or something else. Try to avoid this and instead name each function explicitly.
 
+#### Why
+During debugging it is annoying to read anonymous function, because that does not help to understand what is going on.
 
+#### Bad
+  ```javascript
+  var controller.setEventHandler( function () {
+  }
+  ```
+  
+#### Good
+  ```javascript
+  var controller.setEventHandler( function handleCustomerIdChangedEvent() {
+  }
+  ```

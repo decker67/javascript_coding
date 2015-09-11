@@ -181,7 +181,7 @@ During debugging it is annoying to read anonymous function, because that does no
 It's always a bad idea to silently catch exceptions or not executing a function when a given parameter is missing. You should have good arguments when doing so.
 
 #### Why
-Simply because you are hiding errors in using the function or executing code. This does not help to get your programm free of errors and even worse hides the source of the problem poping up somewhere else.
+Simply because you are hiding errors in using the function or executing code. This does not help to get your program free of errors and even worse hides the source of the problem poping up somewhere else.
 
 #### Bad
   ```javascript

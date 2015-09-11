@@ -10,6 +10,7 @@
   5. Provide variables with default values
   6. Replace switch case by a table
   7. Avoid anonymous functions
+  8. Crash Early
   
 ### 1 Naming of variables, functions, ...
 #### What
@@ -174,3 +175,43 @@ During debugging it is annoying to read anonymous function, because that does no
   var controller.setEventHandler( function handleCustomerIdChangedEvent() {
   }
   ```
+  
+### 7 Crash Early
+#### What
+It's always a bad idea to silently catch exceptions or not executing a function when a given parameter is missing. You should have good arguments when doing so.
+
+#### Why
+Simply because you are hiding errors in using the function or executing code. This does not help to get your programm free of errors and even worse hides the source of the problem poping up somewhere else.
+
+#### Bad
+  ```javascript
+  function saveCustomer(customerEntity)  {
+    if(!customerEntity) {
+       return;
+    }
+    
+    try {
+      resource.update(customerEntity);
+    }
+    catch (e) {
+      // statements to handle any exceptions
+      logMyErrors(e); // pass exception object to error handler
+    }
+  }
+  ```
+  
+#### Good
+  ```javascript
+  function saveCustomer(customerEntity)  {
+    console.assert(!customerEntity, 'customerEntity not given.');
+    ...
+    try {
+      resource.update(customerEntity);
+    }
+    catch (exception) {
+      console.log(exception);
+      throw exception;
+    }
+  }
+  ```
+
